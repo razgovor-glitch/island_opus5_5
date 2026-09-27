@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Harbor Isle</title>
+    <meta name="description" content="A cozy 3D island village builder made with React, TypeScript and three.js." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M8 44 L32 12 L56 44 Z' fill='%23a86b3c'/><rect x='6' y='44' width='52' height='10' rx='3' fill='%233b89a8'/></svg>" />
+    <style>
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        background: radial-gradient(ellipse at 50% 40%, #e8eff2 0%, #cfdde5 60%, #b9ccd6 100%);
+        color: #4a3220;
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+        z-index: 100;
+        transition: opacity 0.6s ease;
+      }
+      #boot.done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #boot h1 {
+        margin: 0;
+        font-size: 44px;
+        letter-spacing: 1px;
+      }
+      #boot p {
+        margin: 0;
+        font-family: 'Trebuchet MS', system-ui, sans-serif;
+        font-size: 14px;
+        color: #715740;
+      }
+      #boot .wave {
+        width: 120px;
+        height: 6px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, #2f8fa6 0%, #7fc6c0 50%, #2f8fa6 100%);
+        background-size: 200% 100%;
+        animation: boot-wave 1.2s linear infinite;
+      }
+      @keyframes boot-wave {
+        to {
+          background-position: -200% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="boot">
+      <h1>Harbor Isle</h1>
+      <div class="wave"></div>
+      <p>Raising the island from the sea…</p>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
